@@ -2,11 +2,12 @@ import socket
 
 class SubdomainScanner:
 
-def __init__():
+def __init__(self):
     pass
 
-def 
-    domain = input("dominio: ")
+def run(self)
+
+domain = input("dominio: ")
 
     list = ["admin", "ns1"]
 
