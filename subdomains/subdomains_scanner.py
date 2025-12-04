@@ -1,16 +1,24 @@
 import socket
+from utils.wordlist_importer import WordlistImporter
 
 class SubdomainScanner:
+    def __init__(self):
+        self.importer = WordlistImporter()
 
-def __init__(self):
-    pass
+    def run(self):
+        domain = input("Target domain: ")
+        filename = input("Wordlist filename (inside utils/wordlists): ")
 
-def run(self)
+        words = self.importer.load_wordlist(filename)
 
-domain = input("dominio: ")
+        if not words:
+            print("Empty wordlist or cannot load file.")
+            return
 
-    list = ["admin", "ns1"]
-
-    for word  in list:
-        dns = word + "." + domain
-        print(dns)
+        for word in words:
+            sub = f"{word}.{domain}"
+            try:
+                socket.gethostbyname(sub)
+                print(f"[FOUND] {sub}")
+            except:
+                pass
