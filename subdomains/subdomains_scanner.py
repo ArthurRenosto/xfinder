@@ -6,8 +6,8 @@ class SubdomainScanner:
         self.importer = WordlistImporter()
 
     def run(self):
-        domain = input("Target domain: ")
-        filename = input("Wordlist filename (inside utils/wordlists): ")
+        domain = input("domain: ")
+        filename = input("Select the wordlist: ")
 
         words = self.importer.load_wordlist(filename)
 
