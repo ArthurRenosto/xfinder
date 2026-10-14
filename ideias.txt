@@ -1,2 +1,0 @@
-port scanner + version service
-directory and subdomain bruteforcer
